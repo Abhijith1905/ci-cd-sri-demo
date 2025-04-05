@@ -1,24 +1,42 @@
+# version: 0.2
+
+# phases: 
+#     install:
+#         runtime-versions:
+#             nodejs: 18
+#         commands:
+#             - echo "installing something"
+#     pre_build:
+#         commands: 
+#             - echo "This is the pre build phase"
+#     build:
+#         commands:
+#             - echo "This is the build phase"
+#             - echo "Here we can run some tests"
+#     post_build:
+#         commands:
+#             - echo "This is the post build phase"
+            
+# artifacts:
+#   files:
+#     - '**/*'
+#   name: DevOpsAppArtifacts             
+            
+
 version: 0.2
 
-phases: 
-    install:
-        runtime-versions:
-            nodejs: 18
-        commands:
-            - echo "installing something"
-    pre_build:
-        commands: 
-            - echo "This is the pre build phase"
-    build:
-        commands:
-            - echo "This is the build phase"
-            - echo "Here we can run some tests"
-    post_build:
-        commands:
-            - echo "This is the post build phase"
-            
+phases:
+  install:
+    commands:
+      - echo "Installing dependencies (none needed for static HTML)"
+  build:
+    commands:
+      - echo "Build started on `date`"
+      - echo "No actual build steps needed for static HTML"
+  post_build:
+    commands:
+      - echo "Build completed on `date`"
+
 artifacts:
   files:
-    - '**/*'
-  name: DevOpsAppArtifacts             
-            
+    - '**/*.html'
